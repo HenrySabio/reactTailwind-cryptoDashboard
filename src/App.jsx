@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import CoinCard from './components/CoinCard';
+import LimitSelector from './components/LimitSelector';
 const API_URL = import.meta.env.VITE_API_URL;
 
 const app = () => {
@@ -36,18 +37,7 @@ const app = () => {
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <h1 className="text-4xl font-bold">Welcome to the Crypto Dashboard</h1>
 
-      <div className="controls">
-        <label htmlFor="limit">Number of Coins:</label>
-        <select
-          id="limit"
-          value={limit}
-          onChange={(e) => setLimit(e.target.value)}
-        >
-          <option value={10}>10</option>
-          <option value={20}>20</option>
-          <option value={50}>50</option>
-        </select>
-      </div>
+      <LimitSelector limit={limit} onLimitChange={setLimit} />
 
       {loading && <p className="text-center mt-4">Loading...</p>}
       {error && <p className="text-center mt-4 text-red-500">Error: {error}</p>}
