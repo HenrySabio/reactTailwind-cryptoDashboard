@@ -54,9 +54,11 @@ const app = () => {
 
       {!loading && !error && (
         <main className="grid">
-          {filteredCoins.map((coin) => (
+          {filteredCoins.length > 0 ? filteredCoins.map((coin) => (
             <CoinCard key={coin.id} coin={coin} />
-          ))}
+          )) : (
+            <p className="text-center mt-4">No matching coins</p>
+          )}
         </main>
       )}
     </div>
