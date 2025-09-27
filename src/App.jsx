@@ -36,21 +36,25 @@ const app = () => {
 
       {loading && <p className="text-center mt-4">Loading...</p>}
       {error && <p className="text-center mt-4 text-red-500">Error: {error}</p>}
-      
+
       {!loading && !error && (
-        <div className="container mx-auto p-4">
-          <h1 className="text-2xl font-bold mb-4">Top 10 Cryptocurrencies by Market Cap</h1>
+        <main className="grid">
           {coins.map((coin) => (
-            <div key={coin.id} className="bg-white p-4 rounded shadow mb-4 flex items-center">
-              <img src={coin.image} alt={coin.name} className="w-10 h-10 mr-4" />
-              <div>
-                <h2 className="text-xl font-bold">{coin.name} ({coin.symbol.toUpperCase()})</h2>
-                <p className="text-gray-600">Current Price: ${coin.current_price.toLocaleString()}</p>
-                <p className="text-gray-600">Market Cap: ${coin.market_cap.toLocaleString()}</p>
+            <div key={coin.id} className="coin-card">
+              <div className="coin-header">
+                <img src={coin.image} alt={coin.name} className="coin-image" />
+                <div>
+                  <h2>{coin.name}</h2>
+                  <p className="symbol">{coin.symbol.toUpperCase()}</p>
+                </div>
               </div>
+              <p className={coin.current_price > 1000 ? "positive" : "negative"}>
+                {coin.price_change_percentage_24h.toFixed(2)}%
+              </p>
+              <p className="text-gray-600">Market Cap: ${coin.market_cap.toLocaleString()}</p>
             </div>
           ))}
-        </div>
+        </main>
       )}
     </div>
   );
