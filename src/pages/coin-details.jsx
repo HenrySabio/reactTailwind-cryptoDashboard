@@ -50,27 +50,14 @@ const CoinDetailPage = () => {
 					<div className='coin-details-info'>
 						<h3>Rank: {coin.market_cap_rank}</h3>
 						<h3>
-							Current Price: $
-							{coin.market_data.current_price.usd.toLocaleString()}
+							Current Price: ${coin.market_data.current_price.usd.toLocaleString()}
 						</h3>
+						<h4>Market Cap: ${coin.market_data.market_cap.usd.toLocaleString()}</h4>
+						<h4>24h High: ${coin.market_data.high_24h.usd.toLocaleString()}</h4>
+						<h4>24h Low: ${coin.market_data.low_24h.usd.toLocaleString()}</h4>
 						<h4>
-							Market Cap: $
-							{coin.market_data.market_cap.usd.toLocaleString()}
-						</h4>
-						<h4>
-							24h High: $
-							{coin.market_data.high_24h.usd.toLocaleString()}
-						</h4>
-						<h4>
-							24h Low: $
-							{coin.market_data.low_24h.usd.toLocaleString()}
-						</h4>
-						<h4>
-							24h Price Change: $
-							{coin.market_data.price_change_24h.toFixed(2)} (
-							{coin.market_data.price_change_percentage_24h.toFixed(
-								2
-							)}
+							24h Price Change: ${coin.market_data.price_change_24h.toFixed(2)} (
+							{coin.market_data.price_change_percentage_24h.toFixed(2)}
 							%)
 						</h4>
 						<h4>
@@ -83,18 +70,9 @@ const CoinDetailPage = () => {
 								? coin.market_data.total_supply.toLocaleString()
 								: "N/A"}
 						</h4>
-						<h4>
-							All Time High: $
-							{coin.market_data.ath.usd.toLocaleString()}
-						</h4>
-						<h4>
-							All Time Low: $
-							{coin.market_data.atl.usd.toLocaleString()}
-						</h4>
-						<h4>
-							Last Updated:{" "}
-							{new Date(coin.last_updated).toLocaleDateString()}
-						</h4>
+						<h4>All Time High: ${coin.market_data.ath.usd.toLocaleString()}</h4>
+						<h4>All Time Low: ${coin.market_data.atl.usd.toLocaleString()}</h4>
+						<h4>Last Updated: {new Date(coin.last_updated).toLocaleDateString()}</h4>
 					</div>
 					<div className='coin-details-links'>
 						{coin.links.homepage[0] && (

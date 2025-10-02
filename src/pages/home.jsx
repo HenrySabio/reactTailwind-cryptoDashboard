@@ -32,15 +32,9 @@ const Homepage = ({
 				case "price_desc":
 					return b.current_price - a.current_price;
 				case "change_asc":
-					return (
-						a.price_change_percentage_24h -
-						b.price_change_percentage_24h
-					);
+					return a.price_change_percentage_24h - b.price_change_percentage_24h;
 				case "change_desc":
-					return (
-						b.price_change_percentage_24h -
-						a.price_change_percentage_24h
-					);
+					return b.price_change_percentage_24h - a.price_change_percentage_24h;
 			}
 		});
 
@@ -49,21 +43,31 @@ const Homepage = ({
 			<h1 className='text-4xl font-bold'>Welcome to the Dashboard</h1>
 
 			<div className='top-controls'>
-				<FilterInput filter={filter} onFilterChange={setFilter} />
-				<LimitSelector limit={limit} onLimitChange={setLimit} />
-				<SortSelector sortBy={sortBy} onSortChange={setSortBy} />
+				<FilterInput
+					filter={filter}
+					onFilterChange={setFilter}
+				/>
+				<LimitSelector
+					limit={limit}
+					onLimitChange={setLimit}
+				/>
+				<SortSelector
+					sortBy={sortBy}
+					onSortChange={setSortBy}
+				/>
 			</div>
 
 			{loading && <p className='text-center mt-4'>Loading...</p>}
-			{error && (
-				<p className='text-center mt-4 text-red-500'>Error: {error}</p>
-			)}
+			{error && <p className='text-center mt-4 text-red-500'>Error: {error}</p>}
 
 			{!loading && !error && (
 				<main className='grid'>
 					{filteredCoins.length > 0 ? (
 						filteredCoins.map((coin) => (
-							<CoinCard key={coin.id} coin={coin} />
+							<CoinCard
+								key={coin.id}
+								coin={coin}
+							/>
 						))
 					) : (
 						<p className='text-center mt-4'>No matching coins</p>
