@@ -24,7 +24,7 @@ A modern cryptocurrency dashboard built with React and Tailwind CSS (tailwind ve
 
 3. **Start the development server:**
     ```bash
-    npm start
+    npm run dev
     ```
 
 ## Technologies Used
