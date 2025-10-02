@@ -2,6 +2,7 @@ import CoinCard from "../components/CoinCard";
 import LimitSelector from "../components/LimitSelector";
 import FilterInput from "../components/FilterInput";
 import SortSelector from "../components/SortSelector";
+import Spinner from "../components/Spinner";
 
 const Homepage = ({
 	coins,
@@ -57,7 +58,7 @@ const Homepage = ({
 				/>
 			</div>
 
-			{loading && <p className='text-center mt-4'>Loading...</p>}
+			{loading && <Spinner color='white' />}
 			{error && <p className='text-center mt-4 text-red-500'>Error: {error}</p>}
 
 			{!loading && !error && (
