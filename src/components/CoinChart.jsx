@@ -57,7 +57,11 @@ const CoinChart = ({ coinID }) => {
 		fetchChartData();
 	}, [coinID]);
 
-	if (loading) return <p>Loading Chart...</p>;
+	if (loading) {
+		return <p>Chart is loading...</p>;
+	} else if (error) {
+		return <p>Error loading chart: {error}</p>;
+	}
 
 	return (
 		<div style={{ marginTop: "30px" }}>
