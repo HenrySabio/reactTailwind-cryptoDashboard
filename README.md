@@ -1,16 +1,35 @@
-# React + Vite
+# React Tailwind Crypto Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern cryptocurrency dashboard built with React and Tailwind CSS (tailwind version update in progress). This project demonstrates fetching live crypto data, displaying charts, and responsive UI design.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Live cryptocurrency prices and stats
+- Interactive charts
+- Responsive design using Tailwind CSS
+- Modular React components
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/your-username/reactTailwind-cryptoDashboard.git
+    cd reactTailwind-cryptoDashboard
+    ```
 
-## Expanding the ESLint configuration
+2. **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3. **Start the development server:**
+    ```bash
+    npm start
+    ```
+
+## Technologies Used
+
+- React
+- Tailwind CSS
+- Fetch (for API requests)
+- Chart.js (for charts)
