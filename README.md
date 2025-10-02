@@ -32,4 +32,5 @@ A modern cryptocurrency dashboard built with React and Tailwind CSS (tailwind ve
 - React
 - Tailwind CSS
 - Fetch (for API requests)
+- `react-spinners` to display loading states
 - Chart.js (for charts)
