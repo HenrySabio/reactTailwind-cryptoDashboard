@@ -59,10 +59,23 @@ const App = () => {
 						/>
 					}
 				/>
-				<Route path='/about' element={<AboutPage />} />
-				<Route path='/coin/:id' element={<CoinDetailPage />} />
-				<Route path='*' element={<NotFound />} />
+				<Route
+					path='/about'
+					element={<AboutPage />}
+				/>
+				<Route
+					path='/coin/:id'
+					element={<CoinDetailPage />}
+				/>
+				<Route
+					path='*'
+					element={<NotFound />}
+				/>
 			</Routes>
+			<p className='col-span-full text-center mt-6 text-yellow-400 text-sm'>
+				Note: This app uses a rate-limited API. If you see an error, please wait a few
+				minutes before trying again.
+			</p>
 		</>
 	);
 };

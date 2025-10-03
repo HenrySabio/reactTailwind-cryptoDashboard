@@ -74,6 +74,7 @@ const Homepage = ({
 					) : (
 						<p className='text-center mt-4'>No matching coins</p>
 					)}
+
 				</main>
 			)}
 		</div>

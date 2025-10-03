@@ -192,7 +192,7 @@ const CoinDetailPage = () => {
 						)}
 
 						{coin.categories.length > 0 && (
-							<p className='text-gray-700'>
+							<p className='text-gray-400'>
 								<span className='font-medium text-gray-900'>Categories:</span>{" "}
 								{coin.categories.join(", ")}
 							</p>
