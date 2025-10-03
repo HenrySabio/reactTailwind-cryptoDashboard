@@ -40,34 +40,35 @@ const Homepage = ({
 		});
 
 	return (
-		<div className='min-h-screen bg-gray-100 flex items-center justify-center'>
-			<h1 className='text-4xl font-bold'>Welcome to the Dashboard</h1>
+		<div className='min-h-screen'>
+			<h1 className='text-4xl font-bold mb-8 block'>Welcome to the Dashboard</h1>
 
-			<div className='top-controls'>
+			<div className='flex justify-between items-center mb-8 gap-4 flex-wrap'>
 				<FilterInput
 					filter={filter}
 					onFilterChange={setFilter}
-				/>
-				<LimitSelector
-					limit={limit}
-					onLimitChange={setLimit}
 				/>
 				<SortSelector
 					sortBy={sortBy}
 					onSortChange={setSortBy}
 				/>
+				<LimitSelector
+					limit={limit}
+					onLimitChange={setLimit}
+				/>
 			</div>
 
 			{loading && <Spinner color='white' />}
-			{error && <p className='text-center mt-4 text-red-500'>Error: {error}</p>}
+			{error && <p className='text-center mt-4 text-red-500 block'>Error: {error}</p>}
 
 			{!loading && !error && (
-				<main className='grid'>
+				<main className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5'>
 					{filteredCoins.length > 0 ? (
-						filteredCoins.map((coin) => (
+						filteredCoins.map((coin, idx) => (
 							<CoinCard
 								key={coin.id}
 								coin={coin}
+								idx={idx}
 							/>
 						))
 					) : (
