@@ -1,6 +1,6 @@
 # React Tailwind Crypto Dashboard
 
-A modern cryptocurrency dashboard built with React and Tailwind CSS (tailwind version update in progress). This project demonstrates fetching live crypto data, displaying charts, and responsive UI design.
+A modern cryptocurrency dashboard built with React and Tailwind CSS. This project demonstrates fetching live crypto data, displaying charts, and responsive UI design.
 
 ## Features
 
